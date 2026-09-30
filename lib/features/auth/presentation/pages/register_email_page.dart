@@ -71,7 +71,7 @@ class _RegisterEmailPageState extends ConsumerState<RegisterEmailPage> {
         data: (user) {
           if (user != null) {
             Navigator.of(context).pushReplacementNamed(
-              AppRoutes.authSuccess,
+              AppRoutes.home,
               arguments: user,
             );
           }

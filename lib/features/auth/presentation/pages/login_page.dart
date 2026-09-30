@@ -5,6 +5,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/google_glyph.dart';
 import '../../../../core/widgets/social_auth_button.dart';
 import '../../../../core/widgets/svg_icon.dart';
+import '../../domain/entities/app_user.dart';
 import '../widgets/privacy_notice.dart';
 
 class LoginPage extends StatelessWidget {
@@ -64,8 +65,10 @@ class LoginPage extends StatelessWidget {
                   size: 28,
                 ),
                 style: SocialAuthStyle.outline,
-                onPressed: () =>
-                    Navigator.of(context).pushNamed(AppRoutes.loginEmail),
+                onPressed: () => Navigator.of(context).pushReplacementNamed(
+                  AppRoutes.home,
+                  arguments: AppUser.guest(),
+                ),
               ),
               const SizedBox(height: 24),
               const PrivacyNotice(),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../features/auth/domain/entities/app_user.dart';
-import '../../features/auth/presentation/pages/auth_success_page.dart';
 import '../../features/auth/presentation/pages/login_email_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/register_email_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
+import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page.dart';
 
 class AppRoutes {
@@ -16,7 +16,7 @@ class AppRoutes {
   static const registerEmail = '/register/email';
   static const login = '/login';
   static const loginEmail = '/login/email';
-  static const authSuccess = '/auth/success';
+  static const home = '/home';
 }
 
 class AppRouter {
@@ -34,11 +34,9 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case AppRoutes.loginEmail:
         return MaterialPageRoute(builder: (_) => const LoginEmailPage());
-      case AppRoutes.authSuccess:
+      case AppRoutes.home:
         final user = settings.arguments as AppUser;
-        return MaterialPageRoute(
-          builder: (_) => AuthSuccessPage(user: user),
-        );
+        return MaterialPageRoute(builder: (_) => HomePage(user: user));
       default:
         return MaterialPageRoute(builder: (_) => const OnboardingPage());
     }

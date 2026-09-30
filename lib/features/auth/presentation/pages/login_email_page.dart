@@ -56,7 +56,7 @@ class _LoginEmailPageState extends ConsumerState<LoginEmailPage> {
         data: (user) {
           if (user != null) {
             Navigator.of(context).pushReplacementNamed(
-              AppRoutes.authSuccess,
+              AppRoutes.home,
               arguments: user,
             );
           }
